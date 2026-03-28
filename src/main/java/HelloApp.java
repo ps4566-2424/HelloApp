@@ -6,16 +6,16 @@ public class HelloApp {
             System.out.println("Hello, World!");
         } else {
 
-            StringBuilder names = new StringBuilder();
+            StringBuilder nameBuilder = new StringBuilder();
 
             for (String name : args) {
-                if (names.length() > 0) {
-                    names.append(", ");
-                }
-                names.append(name);
+                nameBuilder.append(name).append(", ");
             }
 
-            System.out.println("Hello, " + names.toString() + "!");
+            // Remove trailing ", "
+            String result = nameBuilder.substring(0, nameBuilder.length() - 2);
+
+            System.out.println("Hello, " + result + "!");
         }
 
     }
